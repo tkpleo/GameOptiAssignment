@@ -2401,10 +2401,14 @@ PrefabInstance:
     - target: {fileID: 8039917739599858111, guid: 4418e3cac9ce7e947a9c6115d176193a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1734673168}
+      objectReference: {fileID: 1734673167}
     - target: {fileID: 8039917739599858111, guid: 4418e3cac9ce7e947a9c6115d176193a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartGame
+      value: RetartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 8039917739599858111, guid: 4418e3cac9ce7e947a9c6115d176193a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8875062732082604026, guid: 4418e3cac9ce7e947a9c6115d176193a, type: 3}
       propertyPath: m_Pivot.x

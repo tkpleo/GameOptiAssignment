@@ -42,7 +42,7 @@ public class PlatformMovement : MonoBehaviour
 
         if (destroyWhenBelow && transform.position.y < destroyBelowY)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

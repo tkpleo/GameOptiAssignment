@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    public GameObject prefabToSpawn; // Drag your prefab her
-    public float spawnInterval = 2.0f; // Seconds between spawns
-    public Vector2 spawnRange1 = new Vector2(-8, -2); // Min and Max X
-    public Vector2 spawnRange2 = new Vector2(2, 8); // Min and Max X
+    public GameObject prefabToSpawn; // drag your prefab her
+    public float spawnInterval = 2.0f; // seconds between spawns
+    public Vector2 spawnRange1 = new Vector2(-8, -2); // min and Max X
+    public Vector2 spawnRange2 = new Vector2(2, 8); // min and Max X
     public PlatformPooler platformPooler;
 
     void Start()
     {
-        // Start the repeated spawning process
-        StartCoroutine(SpawnRoutine());
+        
+        StartCoroutine(SpawnRoutine()); // start the repeated spawning process
     }
 
     IEnumerator SpawnRoutine()
@@ -21,14 +21,13 @@ public class PlatformSpawner : MonoBehaviour
         while (true)
         {
             SpawnObject();
-            // Wait for the specified interval before the next spawn
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(spawnInterval); // wait for the specified interval before the next spawn
         }
     }
 
     void SpawnObject()
     {
-        // Generate a random position within your defined range
+        // generate a random position within your defined range
         float random1 = Random.Range(spawnRange1.x, spawnRange1.y);
         float random2 = Random.Range(spawnRange2.x, spawnRange2.y);
         Vector3 spawnPos1 = new Vector3(random1, 14, 0);

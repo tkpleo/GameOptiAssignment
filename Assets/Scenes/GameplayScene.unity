@@ -2216,6 +2216,7 @@ MonoBehaviour:
   timeElapsed: 0
   timerText: {fileID: 1839090622}
   gameOverTime: {fileID: 521980063}
+  gamePausedTime: {fileID: 462573656}
 --- !u!114 &1734673168
 MonoBehaviour:
   m_ObjectHideFlags: 0

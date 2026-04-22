@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public float timeElapsed;
     public TextMeshProUGUI timerText;
     public TextMeshProUGUI gameOverTime;
+    public TextMeshProUGUI gamePausedTime;
+    bool gameOverActive = false;
 
     //enable gameover screen when player dies
 
@@ -26,6 +28,7 @@ public class GameManager : MonoBehaviour
     }
     public void GameOver()
     {
+        gameOverActive = true;
         Time.timeScale = 0f;
         gameOverScreen.SetActive(true);
         gameOverTime.text = timerText.text + " seconds!";
@@ -40,17 +43,20 @@ public class GameManager : MonoBehaviour
 
     public void pause()
     {
-        if (!gamePaused)
+        if (!gamePaused && !gameOverActive)
         {
             pauseScreen.SetActive(true);
             Time.timeScale = 0f;
             gamePaused = true;
+            gamePausedTime.text = timerText.text + " seconds!";
+            timerText.gameObject.SetActive(false);
         }
-        else
+        else if (!gameOverActive)
         {
             pauseScreen.SetActive(false);
             Time.timeScale = 1f;
             gamePaused = false;
+            timerText.gameObject.SetActive(true);
         }
     }
 
